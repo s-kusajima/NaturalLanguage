@@ -5,13 +5,6 @@ package textsummary;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
-import java.net.URLEncoder;
-import java.util.ArrayList;
-import javax.xml.parsers.*;
-import org.w3c.dom.*;
-
-import testpackage.DependencyParsingTest;
-
 public class Summarize {
 	
 	public Summarize(){
@@ -24,8 +17,8 @@ public class Summarize {
 			}
 			br.close();
 			
-//			str = str.replace("。", "。\n").replace("、", "、\n");
-			str = str.replace("。", "。\n");
+			str = str.replace("。", "。\n").replace("、", "、\n").replace("」", "」\n");
+//			str = str.replace("。", "。\n");
 			
 			String[] lines = str.split("\n");
 			for(int i = 0; i < lines.length; i++){
@@ -33,7 +26,7 @@ public class Summarize {
 				System.out.println(dp.toString(1));
 			}
 			System.out.println();
-			System.out.println(str);
+//			System.out.println(str);
 		}catch(Exception e){
 			e.printStackTrace();
 		}
